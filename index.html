@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#eaf6fb">
+    <meta name="description" content="Выберите прогулку для собаки и отправьте заявку ситтеру в Гуляйке.">
+    <title>Гуляйка — прогулки рядом</title>
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#booking" data-nav="booking" aria-label="Гуляйка — главная">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M8 20c0-4.3 2.5-7.4 5.6-7.4 2 0 3.5 1.3 4.7 3.1 1.5-1.1 3.3-1.7 5.7-1.7 2.5 0 4.7.7 6.3 2 1.2-2 2.9-3.4 4.9-3.4 3.3 0 5.7 3.1 5.7 7.4 0 2.6-1 4.7-2.6 6.2.4 1.3.6 2.8.6 4.4 0 7.5-5.9 12.4-14.5 12.4S8 38.1 8 30.6c0-1.6.2-3.1.6-4.4C9 23.9 8 22.4 8 20Z" fill="currentColor"/><path d="M18 30.5c1.6-1.5 3.5-2.2 6-2.2s4.4.7 6 2.2c-.3 3.8-2.6 6-6 6s-5.7-2.2-6-6Z" fill="var(--surface)"/><circle cx="18.2" cy="24.2" r="1.5" fill="var(--surface)"/><circle cx="29.8" cy="24.2" r="1.5" fill="var(--surface)"/></svg>
+          </span>
+          <span class="brand-name">Гуляйка</span>
+        </a>
+        <div class="topbar-right">
+          <span class="demo-label"><span></span> Демо-сервис</span>
+          <button class="icon-button theme-toggle" type="button" data-action="theme" aria-label="Переключить тему" title="Переключить тему">
+            <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"/></svg>
+          </button>
+          <button class="role-switch" type="button" data-action="role" aria-label="Открыть кабинет ситтера">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c.5-4 3.1-6 7.5-6s7 2 7.5 6"/></svg>
+            <span>Кабинет</span>
+          </button>
+        </div>
+      </header>
+
+      <nav class="main-nav" aria-label="Главное меню" id="clientNav">
+        <button type="button" class="nav-link is-active" data-nav="booking"><span class="nav-icon">⌂</span>Заказать прогулку</button>
+        <button type="button" class="nav-link" data-nav="my-orders"><span class="nav-icon">◷</span>Мои заявки <span class="nav-count" id="clientOrderCount" hidden>0</span></button>
+        <button type="button" class="nav-link" data-nav="sitter-profile"><span class="nav-icon">♡</span>О ситтере</button>
+      </nav>
+
+      <main id="main" tabindex="-1">
+        <div id="clientView">
+          <section class="page-section client-page is-visible" id="view-booking" data-page="booking">
+            <div class="welcome-row">
+              <div class="welcome-copy">
+                <p class="eyebrow">Прогулки рядом с домом</p>
+                <h1>Хороший день<br>начинается с прогулки</h1>
+                <p class="welcome-subtitle">Выберите удобное время — ситтер подтвердит заявку и свяжется с вами.</p>
+                <div class="trust-row"><span class="avatar-stack"><i>А</i><i>М</i><i>К</i></span><span><strong>4.9</strong> · уже 128 прогулок</span></div>
+              </div>
+              <div class="hero-illustration" aria-label="Белая собака на прогулке" role="img">
+                <svg class="hero-dog" viewBox="0 0 270 210" aria-hidden="true">
+                  <ellipse cx="137" cy="183" rx="93" ry="13" fill="#b8dce9" opacity=".7"/>
+                  <path d="M81 117c-2-21 7-42 27-51 14-6 37-4 49 7 10 9 16 26 15 47l20 24c6 8 2 19-8 20l-20 1-16-20h-57l-13 20H56c-8 0-13-8-9-15l18-31 16-2Z" fill="#fff" stroke="#243b45" stroke-width="3" stroke-linejoin="round"/>
+                  <path d="M101 70c-9-22-6-40 3-42 11-2 21 19 22 37m22 0c4-24 17-37 25-31 7 6 0 25-12 39" fill="#fff" stroke="#243b45" stroke-width="3" stroke-linejoin="round"/>
+                  <path d="M91 102c6-16 18-21 29-18m28 18c-5-14-14-19-24-18" fill="none" stroke="#243b45" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="108" cy="101" r="3.5" fill="#243b45"/><circle cx="147" cy="101" r="3.5" fill="#243b45"/>
+                  <path d="M122 111c3-4 9-4 12 0l-6 6-6-6Z" fill="#243b45"/><path d="M128 117c-1 8-10 10-15 5m15-5c1 8 10 10 15 5" fill="none" stroke="#243b45" stroke-width="2.4" stroke-linecap="round"/>
+                  <path d="M86 123c19 12 42 14 68 9" fill="none" stroke="#73bad2" stroke-width="8" stroke-linecap="round"/><path d="m148 136 10 24m-45-26-5 28m66-40 7 19" stroke="#243b45" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M203 74c-7-6-12-10-18-11m24-1c-7-6-12-10-18-11" stroke="#f0bc5f" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <span class="hero-sun"></span><span class="hero-cloud cloud-one"></span><span class="hero-cloud cloud-two"></span>
+                <span class="illustration-caption">Каждый хвостик<br>доволен прогулкой</span>
+              </div>
+            </div>
+
+            <div class="booking-layout">
+              <div class="booking-column">
+                <section class="panel booking-panel" aria-labelledby="bookingTitle">
+                  <div class="panel-heading">
+                    <div><p class="eyebrow">Под ваш ритм</p><h2 id="bookingTitle">Спланируем прогулку</h2></div>
+                    <span class="step-pill">Заявка без оплаты</span>
+                  </div>
+
+                  <fieldset class="service-switch" aria-label="Выберите услугу">
+                    <button type="button" class="service-tab is-selected" data-service="walk" aria-pressed="true"><span>🐕</span><b>Прогулка</b><small>от 300 ₽</small></button>
+                    <button type="button" class="service-tab" data-service="boarding" aria-pressed="false"><span>🏡</span><b>Передержка</b><small>1 500 ₽ / сутки</small></button>
+                  </fieldset>
+
+                  <div class="builder-group" id="walkOptions">
+                    <div class="field-heading"><span class="field-number">1</span><div><h3>Сколько гуляем?</h3><p>Фотоотчёт после прогулки включён</p></div></div>
+                    <div class="choice-row duration-options" role="group" aria-label="Длительность прогулки">
+                      <button type="button" class="choice-chip" data-duration="15" aria-pressed="false">15 мин<span>300 ₽</span></button>
+                      <button type="button" class="choice-chip" data-duration="30" aria-pressed="false">30 мин<span>350 ₽</span></button>
+                      <button type="button" class="choice-chip is-selected" data-duration="45" aria-pressed="true">45 мин<span>400 ₽</span></button>
+                      <button type="button" class="choice-chip" data-duration="60" aria-pressed="false">60 мин<span>450 ₽</span></button>
+                      <button type="button" class="choice-chip" data-duration="90" aria-pressed="false">90 мин<span>500 ₽</span></button>
+                    </div>
+                    <div class="option-grid">
+                      <label class="check-option"><input id="washPaws" type="checkbox"><span class="custom-check" aria-hidden="true"></span><span><b>Мытьё лап</b><small>+150 ₽</small></span></label>
+                      <label class="check-option"><input id="secondDog" type="checkbox"><span class="custom-check" aria-hidden="true"></span><span><b>Вторая собака</b><small>+50% к прогулке</small></span></label>
+                      <label class="check-option"><input id="withOthers" type="checkbox"><span class="custom-check" aria-hidden="true"></span><span><b>Гулять с другими</b><small>В небольшой компании</small></span></label>
+                      <label class="check-option" id="photoEveryOption" hidden><input id="photoEvery" type="checkbox"><span class="custom-check" aria-hidden="true"></span><span><b>Фото каждые 30 минут</b><small>Для прогулок от часа</small></span></label>
+                    </div>
+                  </div>
+                  <div class="builder-group boarding-options" id="boardingOptions" hidden>
+                    <div class="field-heading"><span class="field-number">1</span><div><h3>Сколько суток?</h3><p>Передержка в домашней обстановке</p></div></div>
+                    <div class="number-control"><button type="button" data-action="boarding-minus" aria-label="Уменьшить количество суток">−</button><output id="boardingDays">1 сутки</output><button type="button" data-action="boarding-plus" aria-label="Увеличить количество суток">+</button></div>
+                  </div>
+
+                  <div class="builder-group">
+                    <div class="field-heading"><span class="field-number">2</span><div><h3>Когда удобно?</h3><p id="selectedDateLabel">Выберите день и время</p></div></div>
+                    <div class="date-strip" id="dateStrip" role="group" aria-label="Дата прогулки"></div>
+                    <div class="time-heading"><span>Время начала</span><span class="time-range">с 7:00 до 21:00</span></div>
+                    <div class="time-strip" id="timeStrip" role="group" aria-label="Время прогулки"></div>
+                    <p class="inline-hint" id="availabilityHint">Время подтверждается ситтером после заявки.</p>
+                  </div>
+
+                  <div class="builder-group last-builder-group">
+                    <div class="field-heading"><span class="field-number">3</span><div><h3>Кого ждём?</h3><p>Сохраните место в корзине — заявку можно отправить позже</p></div></div>
+                    <div class="dog-card">
+                      <span class="dog-card-icon" aria-hidden="true">🐾</span><div class="dog-card-copy"><b id="builderDogTitle">Расскажите о собаке в заявке</b><small>Порода, характер и важные детали</small></div><span class="included-tag">Фото включено</span>
+                    </div>
+                    <div class="add-row"><div class="price-preview"><small>Примерная стоимость</small><strong id="unitPrice">400 ₽</strong></div><button class="button button-primary" type="button" data-action="add-to-cart"><span aria-hidden="true">＋</span> Добавить в корзину</button></div>
+                    <p class="form-note">Оплаты в приложении нет — детали вы согласуете с ситтером.</p>
+                  </div>
+                </section>
+
+                <section class="panel map-panel">
+                  <div class="panel-heading map-heading"><div><p class="eyebrow">Рядом с вами</p><h2>Знакомый район, новые маршруты</h2><p class="section-desc" id="districtLabel">Прогулки в вашем районе</p></div><span class="map-pin" aria-hidden="true">⌖</span></div>
+                  <div class="map-art" aria-label="Схематичная карта прогулочного маршрута" role="img">
+                    <svg viewBox="0 0 720 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                      <rect width="720" height="300" fill="#ddecdf"/>
+                      <path d="M0 185c82-28 118-19 187 2s139 18 208-2 122-20 190 0 97 14 135 3v112H0Z" fill="#b9d9c5"/>
+                      <path d="M-15 48 740 178M76-22l133 352M319-20 204 322M497-18 620 312M-25 235 742 77" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round"/>
+                      <path d="M-15 48 740 178M76-22l133 352M319-20 204 322M497-18 620 312M-25 235 742 77" fill="none" stroke="#cdd5ce" stroke-width="2" stroke-dasharray="2 7"/>
+                      <path d="M93 179c76-63 124-52 183-12s84 54 139 8 102-48 155-22" fill="none" stroke="#418d9a" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 12"/>
+                      <circle cx="94" cy="179" r="10" fill="#fff" stroke="#418d9a" stroke-width="5"/><circle cx="570" cy="153" r="13" fill="#418d9a" stroke="#fff" stroke-width="5"/>
+                      <path d="M404 47h98v55h-98zM514 215h104v44H514zM133 55h91v43h-91z" rx="12" fill="#e8f0e9" opacity=".9"/><path d="M429 62h45v8h-45m-279 8h54v7h-54m381 149h56v7h-56" stroke="#a5b9a8" stroke-width="4" stroke-linecap="round"/>
+                      <text x="98" y="209" fill="#355c62" font-size="13" font-family="system-ui">Старт</text><text x="558" y="132" fill="#355c62" font-size="13" font-family="system-ui">Парк</text>
+                    </svg>
+                    <span class="map-tag"><i></i> Любимый маршрут</span>
+                  </div>
+                  <div class="map-footer"><span class="route-dot"></span><span>Тихие улицы и зелёный сквер</span><span class="map-distance">около 1,2 км</span></div>
+                </section>
+              </div>
+
+              <aside class="side-column" aria-label="Корзина и ситтер">
+                <section class="panel cart-panel" aria-labelledby="cartTitle">
+                  <div class="panel-heading cart-heading"><div><p class="eyebrow">Ваш план</p><h2 id="cartTitle">Корзина <span id="cartCount">0</span></h2></div><span class="cart-bag" aria-hidden="true">▱</span></div>
+                  <div id="cartList" class="cart-list"></div>
+                  <div id="emptyCart" class="empty-cart"><span class="empty-paw" aria-hidden="true">🐾</span><b>Пока здесь пусто</b><small>Добавьте прогулку — и мы сохраним её здесь</small></div>
+                  <div class="subscription-row" id="subscriptionRow" hidden>
+                    <label for="subscriptionSelect">Скидка по абонементу</label>
+                    <select id="subscriptionSelect" name="subscription">
+                      <option value="0">Без абонемента</option><option value="10">10 прогулок · −5%</option><option value="20">20 прогулок · −10%</option><option value="30">30 прогулок · −15%</option>
+                    </select>
+                  </div>
+                  <div class="cart-total" id="cartTotalBlock" hidden><div><span>Сумма прогулок</span><b id="subtotalPrice">0 ₽</b></div><div id="discountLine" hidden><span>Скидка абонемента</span><b id="discountAmount">−0 ₽</b></div><div class="total-line"><span>К оплате</span><strong id="totalPrice">0 ₽</strong></div><small>Оплату вы согласуете с ситтером</small></div>
+                  <button class="button button-primary button-wide checkout-button" id="checkoutButton" type="button" data-action="checkout" disabled>Перейти к заявке <span aria-hidden="true">↗</span></button>
+                  <p class="secure-note"><span aria-hidden="true">⌁</span> Ничего не списываем с карты</p>
+                </section>
+
+                <section class="panel mini-sitter">
+                  <div class="sitter-top"><div class="sitter-avatar" aria-hidden="true">А</div><div class="sitter-meta"><div><b id="sitterNameMini">Анна Ветрова</b><span class="verified" title="Профиль проверен" aria-label="Профиль проверен">✓</span></div><span>Ваш ситтер · рядом</span></div><span class="rating"><span>★</span> <b>4.9</b></span></div>
+                  <p class="sitter-quote">«Собакам со мной спокойно, хозяевам — тоже»</p>
+                  <button class="text-button" type="button" data-nav="sitter-profile">Познакомиться с Анной <span aria-hidden="true">→</span></button>
+                </section>
+              </aside>
+            </div>
+          </section>
+
+          <section class="page-section client-page" id="view-my-orders" data-page="my-orders" hidden>
+            <div class="section-title-row"><div><p class="eyebrow">Всё под контролем</p><h1>Мои заявки</h1><p class="section-desc">Следите за временем и договорённостями с ситтером.</p></div><button class="button button-secondary" type="button" data-nav="booking">＋ Новая заявка</button></div>
+            <div id="clientOrders" class="orders-grid"></div>
+            <div id="emptyOrders" class="panel empty-state"><span aria-hidden="true">🦮</span><h2>Заявок пока нет</h2><p>Соберите удобный план прогулки — заявка появится здесь после отправки.</p><button class="button button-primary" type="button" data-nav="booking">Выбрать прогулку</button></div>
+          </section>
+
+          <section class="page-section client-page profile-page" id="view-sitter-profile" data-page="sitter-profile" hidden>
+            <div class="profile-cover"><div class="profile-doodle" aria-hidden="true">🐕</div><div class="profile-person"><div class="profile-avatar">А</div><div><span class="verified-tag">✓ Проверенный профиль</span><h1 id="profileName">Анна Ветрова</h1><p id="profileDistrict">Парк рядом · 4 года заботы о собаках</p></div></div><div class="profile-score"><b>4.9</b><span>из 5</span><small>★ ★ ★ ★ ★</small></div></div>
+            <div class="profile-columns"><section class="panel profile-about"><p class="eyebrow">Давайте знакомиться</p><h2>Прогулка, после которой хвост виляет</h2><p>Я Анна. Люблю неспешные прогулки, знакомые маршруты и внимательное отношение к характеру каждой собаки. Перед выходом обсудим привычки, а после я пришлю фотоотчёт.</p><div class="profile-facts"><span>🐾 <b>128</b> прогулок</span><span>⏱ <b>Быстрый</b> ответ</span><span>📍 <b id="profileDistrictFact">Ваш район</b></span></div></section>
+              <section class="panel reviews-panel"><div class="panel-heading"><div><p class="eyebrow">Добрые слова</p><h2>Отзывы хозяев</h2></div><span class="review-count">3 отзыва</span></div><article class="review"><div class="review-head"><div class="review-avatar">М</div><div><b>Мария и Боня</b><small>Вчера · 30 минут</small></div><span>★★★★★</span></div><p>Боня пришла довольная, а фотографии с прогулки очень порадовали.</p></article><article class="review"><div class="review-head"><div class="review-avatar review-blue">И</div><div><b>Илья и Ральф</b><small>На прошлой неделе</small></div><span>★★★★★</span></div><p>Анна учла наш маршрут и все особенности. Будем гулять ещё.</p></article><article class="review"><div class="review-head"><div class="review-avatar review-yellow">О</div><div><b>Оля и Луна</b><small>В этом месяце</small></div><span>★★★★★</span></div><p>Очень спокойно и заботливо. Каждый раз ждём фотоотчёт.</p></article></section></div>
+          </section>
+
+          <section class="page-section client-page success-page" id="view-success" data-page="success" hidden>
+            <div class="panel success-panel"><div class="success-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m11 25 9 9 18-21" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="eyebrow">Заявка отправлена</p><h1>План уже у ситтера</h1><p id="successCopy" class="success-copy">Анна свяжется с вами, чтобы подтвердить время.</p><div class="request-number"><span>Номер заявки</span><b id="successNumber">—</b><span class="status-pill status-new" id="successStatus">На согласовании</span></div><div class="success-actions"><button class="button button-primary" type="button" data-nav="my-orders">Открыть мои заявки</button><button class="button button-secondary" type="button" data-action="new-order">Добавить ещё прогулку</button></div><p class="form-note">Оплата не проходит в приложении. Договоритесь с ситтером в чате или по телефону после подтверждения.</p></div></section>
+        </div>
+
+        <div id="sitterView" hidden>
+          <section class="page-section sitter-page is-visible">
+            <div class="sitter-dashboard-head"><div><p class="eyebrow">Ваше рабочее место</p><h1>Кабинет ситтера</h1><p class="section-desc">Заявки и расписание хранятся в этом браузере для демонстрации.</p></div><button class="button button-secondary" type="button" data-action="role">← Вернуться к прогулкам</button></div>
+            <div class="dashboard-summary" id="dashboardSummary"></div>
+            <nav class="sitter-tabs" aria-label="Разделы кабинета ситтера">
+              <button type="button" class="sitter-tab is-active" data-sitter-tab="requests">Заявки <span class="tab-count" id="newRequestCount">0</span></button>
+              <button type="button" class="sitter-tab" data-sitter-tab="schedule">Расписание</button>
+              <button type="button" class="sitter-tab" data-sitter-tab="tariffs">Тарифы</button>
+              <button type="button" class="sitter-tab" data-sitter-tab="dogs">Собаки</button>
+              <button type="button" class="sitter-tab" data-sitter-tab="company">Компания</button>
+              <button type="button" class="sitter-tab" data-sitter-tab="access">Доступ</button>
+            </nav>
+            <div id="sitterContent" class="sitter-content"></div>
+          </section>
+        </div>
+      </main>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Навигация">
+        <button class="mobile-nav-item is-active" type="button" data-nav="booking"><span>⌂</span>Прогулка</button>
+        <button class="mobile-nav-item" type="button" data-nav="my-orders"><span>◷</span>Заявки</button>
+        <button class="mobile-nav-item" type="button" data-nav="sitter-profile"><span>♡</span>Ситтер</button>
+        <button class="mobile-nav-item" type="button" data-action="role"><span>☷</span>Кабинет</button>
+      </nav>
+      <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+      <footer class="site-footer"><span>© Гуляйка · учебный макет</span><span>Создано с заботой о хвостиках</span></footer>
+    </div>
+  </body>
+</html>

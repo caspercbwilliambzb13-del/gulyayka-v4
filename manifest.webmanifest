@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "Гуляйка — прогулки для собак",
+  "short_name": "Гуляйка",
+  "description": "Выберите прогулку и отправьте заявку ситтеру.",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eaf6fb",
+  "theme_color": "#eaf6fb",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
